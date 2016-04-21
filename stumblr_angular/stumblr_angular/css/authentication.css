@@ -1,0 +1,97 @@
+.sign_up_button a {
+    text-align: center;
+    float: right;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding-top: 5px;
+    font-size: 14px;
+    background-color: white;
+    border: solid 1px white;
+    border-radius: 2px;
+    width: 90px;
+    height: 30px;
+}
+
+.sign_in {
+    padding-top: 100px;
+    text-align: center;
+}
+
+.sign_in h1 {
+    text-align: center;
+    color: white;
+    font-size: 55px;
+}
+
+.sign_in_form input {
+    font-size: 19px;
+    width: 300px;
+    height: 40px;
+    padding-left: 30px;
+    border: #E3E3E3 solid 1px;
+}
+
+.sign_in_form button {
+    background-color: #499ECA;
+    border: solid 1px #499ECA;
+    width: 300px;
+    height: 40px;
+    font-size: 19px;
+    color: #E3E3E3;
+    text-align: center;
+}
+
+.sign_in a {
+    color: white;
+    text-decoration: none;
+}
+
+.sign_in_button a {
+    text-align: center;
+    float: right;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding-top: 5px;
+    font-size: 14px;
+    background-color: white;
+    border: solid 1px white;
+    border-radius: 2px;
+    width: 90px;
+    height: 30px;
+}
+
+.sign_up {
+    padding-top: 100px;
+    text-align: center;
+}
+
+.sign_up h1 {
+    text-align: center;
+    color: white;
+    font-size: 55px;
+}
+
+.sign_up_form input {
+    font-size: 19px;
+    width: 300px;
+    height: 40px;
+    padding-left: 30px;
+    border: #E3E3E3 solid 1px;
+}
+
+.sign_up_form button {
+    background-color: #499ECA;
+    border: solid 1px #499ECA;
+    width: 300px;
+    height: 40px;
+    font-size: 19px;
+    color: #E3E3E3;
+    text-align: center;
+}
+
+.sign_up a {
+    color: white;
+    text-decoration: none;
+}

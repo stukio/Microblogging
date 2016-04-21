@@ -1,0 +1,43 @@
+<nav class="row">
+    <div class="col-md-2">
+        <button type="button" ng-click="go('/dashboard')" class="logo">stumblr</button>
+    </div>
+    <div class="col-md-6"></div>
+    <div class="tabs_container col-md-4">
+        <a href="stumblr_angular/#/dashboard"><img ng-src="../stumblr_angular/assets/tab_icons/dashboard_gray.png" class="tab home" alt="home"></a>
+        <a href="stumblr_angular/#/profile"><img ng-src="../stumblr_angular/assets/tab_icons/profile_gray.png" class="tab account" alt="account"></a>
+        <a href="stumblr_angular/#/settings"><img ng-src="../stumblr_angular/assets/tab_icons/settings_white.png" class="tab account" alt="settings"></a>
+        <a class="sign_out_button" ng-click="logout()" href="/#/login">Logout</a>
+    </div>
+</nav>
+<hr>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 update_user_data">
+        <h1>User Settings</h1>
+        <form class="user_data_form" ng-submit="updateUserSettings(user_username, user_avatar)">
+            <table class="avatar_table">
+                <tr>
+                    <td>
+                        <p class="settings_username">{{ current_user.username }}</p>
+                    </td>
+                    <td>
+                        <img class="settings-avatar" ng-src="{{ current_user.avatar }}">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" placeholder="enter new name" ng-model="user_username">
+                    </td>
+                    <td>
+                        <input type="text" placeholder="enter/paste new url" ng-model="user_avatar" class="avatar_input" ng-disable="user_username == undefined && user_avatar == undefined">
+                    </td>
+                </tr>
+            </table>
+            <div class="error_message" ng-show="updateStatus == -1">An error occurred while updating data</div>
+            <div class="error_message" ng-show="updateStatus == 1">Data updated</div>
+            <button type="submit" class="updateData">Update</button>
+        </form>
+    </div>
+    <div class="col-md-2"></div>
+</div>

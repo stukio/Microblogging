@@ -1,0 +1,105 @@
+<div ng-keydown="keyDown($event)">
+    <nav class="row">
+        <div class="col-md-2">
+            <button type="button" ng-click="go('/dashboard')" class="logo">stumblr</button>
+        </div>
+        <div class="col-md-6"></div>
+        <div class="tabs_container col-md-4">
+            <a href="stumblr_angular/#/dashboard"><img ng-src="../stumblr_angular/assets/tab_icons/dashboard_gray.png" class="tab home" alt="home"></a>
+            <a href="stumblr_angular/#/profile"><img ng-src="../stumblr_angular/assets/tab_icons/profile_white.png" class="tab account" alt="account"></a>
+            <a href="stumblr_angular/#/settings"><img ng-src="../stumblr_angular/assets/tab_icons/settings_gray.png" class="tab account" alt="settings"></a>
+            <a class="sign_out_button" ng-click="logout()">Logout</a>
+        </div>
+    </nav>
+    <hr>
+    <div class="header row">
+        <div class="col-md-3">
+            <img class="avatar_container" ng-src="{{ current_user.avatar }}">
+        </div>
+        <div class="col-md-6 menu_container">
+            <table class="menu">
+                <tr>
+                    <td><img class="menu_icon" ng-click="openModal('text')" src="../stumblr_angular/assets/menu_icons/text.png"></td>
+                    <td><img class="menu_icon" ng-click="openModal('photo')" src="../stumblr_angular/assets/menu_icons/photo.png"></td>
+                    <td><img class="menu_icon" ng-click="openModal('quote')" src="../stumblr_angular/assets/menu_icons/quotes.png"></td>
+                    <td><img class="menu_icon" ng-click="openModal('link')" src="../stumblr_angular/assets/menu_icons/link.png"></td>
+                    <td><img class="menu_icon" ng-click="openModal('chat')" src="../stumblr_angular/assets/menu_icons/chat.png"></td>
+                    <td><img class="menu_icon" ng-click="openModal('audio')" src="../stumblr_angular/assets/menu_icons/audio.png"></td>
+                    <td><img class="menu_icon" ng-click="openModal('video')" src="../stumblr_angular/assets/menu_icons/video.png"></td>
+                </tr>
+                <tr>
+                    <td>Text</td>
+                    <td>Photo</td>
+                    <td>Quote</td>
+                    <td>Link</td>
+                    <td>Chat</td>
+                    <td>Audio</td>
+                    <td>Video</td>
+                </tr>
+            </table>
+            <div ng-show="showModal">
+                <div ng-include="modalTemplate"></div>
+            </div>
+        </div>
+        <div class="col-md-3 posts"></div>
+    </div>
+    <br>
+    <br>
+    <div ng-show="posts.length == 0">
+        <p class="no_posts">No posts yet :( :(</p>
+    </div>
+    <div ng-show="posts.length > 0" class="row" ng-repeat="post in posts | orderBy:'-updated_at'">
+        <div class="col-md-3">
+            <img class="avatar_container" ng-src="{{ current_user.avatar }}">
+        </div>
+        <div class="col-md-6">
+            <div class="posts_container">
+                <!-- title -->
+                <div ng-show="post.title.length > 0" class="post_title">
+                    {{ post.title }}
+                </div>
+                <!-- image -->
+                <img ng-show="post.ptype == 'photo'" class="post_image" ng-src="{{ post.url }}">
+                <!-- link -->
+                <div ng-show="post.ptype == 'link'" class="post_link">
+                    <a href="{{ post.url }}" target="_blank">{{ post.url }}</a>
+                </div>
+                <!-- audio or video -->
+                <div ng-show="post.ptype == 'audio' || post.ptype == 'video'">
+                    <iframe ng-src="{{ trustURL(post.url) }}" frameborder="0" allowtransparency="true" class="{{ post.ptype }}_content"></iframe>
+                </div>
+                <!-- text content/description -->
+                <div ng-show="post.content.length > 0" class="post_content {{ post.ptype }}">
+                    {{ post.content }}
+                </div>
+                <!-- quote source -->
+                <div ng-show="post.ptype == 'quote'">
+                    <p class="post_source" ng-show="post.psource != null && post.psource != undefined">-- {{ post.psource }}</p>
+                </div>
+                <!-- hashtags -->
+                <div class="hash_tags" ng-show="post.htags != undefined && post.htags != ''">
+                    <span ng-repeat="tag in post.htags.split(', ')">
+                    #{{ tag }}
+                </span>
+                </div>
+                <div class="post_options">
+                    <button type="button" class="edit_button" ng-click="editPostData(post.id)">Edit</button>
+                    <button type="button" class="delete_button" ng-click="deletePost(post.id)">Delete</button>
+                </div>
+                <hr ng-show="post_comments[post.id].length > 0">
+                <div ng-show="post_comments[post.id].length > 0" class="comments">
+                    <p ng-repeat="comment in post_comments[post.id] | orderBy:'-created_at' | limitTo:5">{{ comment.created_at | date:'MMMM dd' }} at {{ comment.created_at | date:'hh:mm' }} >>> {{ comment.username }} said: {{ comment.content }}</p>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    <div class="user_stats">
+        <p>{{ followers_count || 0 }} followers</p>
+        <p>{{ following_count || 0 }} following</p>
+    </div>
+</div>

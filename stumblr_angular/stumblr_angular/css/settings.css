@@ -1,0 +1,74 @@
+.update_user_data {
+    padding-top: 50px;
+    text-align: center;
+}
+
+.update_user_data h1 {
+    color: white;
+    font-weight: normal;
+}
+
+.user_data_form .avatar_table {
+    margin: auto;
+    padding: 50px;
+}
+
+.user_data_form .avatar_table td {
+    padding: 5px;
+}
+
+.update_user_data .title {
+    font-size: 18px;
+    font-weight: normal;
+    color: #9A9A9A;
+}
+
+.update_user_data input[type="text"] {
+    background-color: #34465C;
+    border-radius: 5px;
+    font-size: 19px;
+    text-align: center;
+    color: white;
+    width: 300px;
+    height: 35px;
+    border: 1px solid white;
+}
+
+.settings_username {
+    background-color: #34465C;
+    color: white;
+    border: none;
+    font-size: 30px;
+}
+
+.avatar_input {
+    background-color: white;
+    border-radius: 5px;
+    font-size: 19px;
+    text-align: center;
+    color: #99A2AC;
+    width: 200px;
+    height: 35px;
+    border: 1px solid white;
+}
+
+.settings-avatar {
+    border: 1px white solid;
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+}
+
+.file-picker_modal {
+    opacity: 0;
+}
+
+.user_data_form .updateData {
+    background-color: #499ECA;
+    border: solid 1px #499ECA;
+    width: 300px;
+    height: 40px;
+    font-size: 19px;
+    color: #E3E3E3;
+    text-align: center;
+}

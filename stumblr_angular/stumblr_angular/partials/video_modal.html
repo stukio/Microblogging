@@ -1,0 +1,19 @@
+<div class="modal">
+    <div class="modal-content">
+        <form ng-submit="createPost(postID, 'video', '', newContent, '', newURL, newTags)">
+            <img src="../stumblr_angular/assets/menu_icons/web.png">
+            <input class="title_input" type="text" ng-model="newURL" placeholder="Add a video from the interwebz.">
+            <br><br>
+            <textarea placeholder="Add a description here" ng-model="newContent"></textarea>
+            <br><br>
+            <input class="tags" type="text" placeholder="#tags" ng-model="newTags">
+            <br>
+            <p class="tag_label">Separate with comas (e.g.: pig riding a bike, lady gaga)</p>
+            <br><br><br>
+            <button class="submit_button" type="submit" ng-disabled="newTitle == null && newContent == null && newURL == null && newTags == null">Publish</button>
+        </form>
+        <button class="close_button" type="button" ng-click="closeModal()">Close</button>
+    </div>
+</div>
+
+

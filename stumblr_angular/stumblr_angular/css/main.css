@@ -1,0 +1,300 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #34465C;
+    margin: 10px;
+}
+
+.error_message {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 25px;
+    color: white;
+}
+
+.logo {
+    float: right;
+    background-color: #34465C;
+    color: white;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.search_bar {
+    padding-top: 5px;
+}
+
+.search_bar input {
+    background: url(../assets/magnifier.png) no-repeat scroll 7px 7px;
+    padding-left: 30px;
+    font-size: 15px;
+    width: 500px;
+    height: 30px;
+    background-color: #2E3D50;
+    border-radius: 3px;
+    border: #2E3D50;
+}
+
+.search_bar input:active {
+    background-color: white;
+    color: gray;
+}
+
+.search_bar input:focus {
+    background-color: white;
+    color: gray;
+}
+
+.search_bar input.ng-dirty.ng-touched {
+    background-color: white;
+    color: gray;
+}
+
+.tabs_container {
+    padding-top: 5px;
+}
+
+.tab {
+    padding-left: 20px;
+}
+
+.sign_out_button {
+    text-align: center;
+    float: right;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding-top: 5px;
+    font-size: 14px;
+    background-color: white;
+    border: solid 1px white;
+    border-radius: 2px;
+    width: 90px;
+    height: 30px;
+}
+
+hr {
+    width: 100%;
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.header {
+    padding-top: 50px;
+}
+
+.no_posts {
+    font-size: 100px;
+    text-align: center;
+    color: white;
+}
+
+.avatar_container {
+    float: right;
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+}
+
+.unfollow_button {
+    z-index: 1;
+    position: absolute;
+    right: 27px;
+    top: 50px;
+    padding: 5px;
+    background-color: white;
+    border: none;
+}
+
+.user_posts {
+    margin-top: 200px;
+}
+
+.menu_container {
+    text-align: center;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.menu {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+.menu_icon:hover {
+    transition: 0.25s;
+    cursor: pointer;
+    -webkit-transform: translateY(-5px);
+    -moz-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    -o-transform: translateY(-5px);
+    transform: translateY(-5px);
+}
+
+.posts_container {
+    background-color: white;
+    text-align: center;
+    color: #34465C;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.post_title {
+    font-size: 30px;
+    padding: 20px;
+}
+
+.post_content {
+    font-size: 20px;
+    padding: 15px;
+}
+
+.post_image {
+    width: 100%;
+}
+
+.post_link {
+    background-color: #EBEBEB;
+    padding: 20px;
+}
+
+.post_link a {
+    font-size: 30px;
+    color: #34465C;
+    text-decoration: none;
+}
+
+.video_content {
+    width: 100%;
+    height: 400px;
+}
+
+.audio_content {
+    width: 100%;
+    height: 100px;
+}
+
+.hash_tags {
+    padding-top: 10px;
+    color: gray;
+    width: 100%;
+    text-align: center;
+}
+
+.quote {
+    font-size: 30px;
+    padding: 20px;
+}
+
+.post_source {
+    text-align: left;
+    padding-left: 30px;
+    font-size: 20px;
+}
+
+.chat {
+    font-family: Courier;
+    font-size: 20px;
+}
+
+.post_options {
+    padding: 40px;
+    width: 100%;
+    background-color: white;
+}
+
+.post_options img {
+    cursor: pointer;
+    padding-left: 10px;
+    float: right;
+}
+
+.post_options .edit_button {
+    background-color: #34465C;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right;
+    margin-right: 10px;
+    border: none;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+}
+
+.post_options .delete_button {
+    background-color: #99A2AC;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right;
+    margin-right: 10px;
+    border: none;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+}
+
+.comments {
+    padding: 5px;
+    margin-left: 20px;
+    text-align: left;
+    color: #9A9A9A;
+    font-size: 15px;
+}
+
+.following_users {
+    width: 200px;
+    position: absolute;
+    right: 50px;
+    top: 115px;
+    cursor: pointer;
+}
+
+.following_users table {
+    background-color: #2E3D50;
+    padding: 10px;
+    margin: auto;
+    text-align: center;
+    color: #99A2AC;
+    font-size: 15px;
+}
+
+.following_users td {
+    padding: 3px;
+}
+
+.user_stats {
+    background-color: #2E3D50;
+    text-align: center;
+    color: #99A2AC;
+    width: 140px;
+    position: absolute;
+    right: 50px;
+    top: 115px;
+}
+
+.following_users .username {
+    color: #99A2AC;
+    text-decoration: none;
+}
+.user_profile_stats {
+    float: right;
+    background-color: white;
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+}
+
+.small_avatar_container {
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+}
+
+.no_posts {
+    margin-top: 200px;
+}

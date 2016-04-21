@@ -1,0 +1,30 @@
+<nav class="row" ng-init="registrationStatus = 0">
+    <div class="col-md-2">
+        <button class="logo" ng-click="go('/sign_up')" type="button">stumblr</button>
+    </div>
+    <div class="col-md-6"></div>
+    <div class="col-md-4 sign_in_button">
+        <a href="stumblr_angular/#/login">Sign in</a>
+    </div>
+</nav>
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 sign_up">
+        <h1>stumblr</h1>
+        <form name="sign_up_form" class="sign_up_form" ng-submit="registerUser(user_username, user_email, user_password, user_password_confirmation)">
+            <input type="text" placeholder="Username" ng-model="user_username" required>
+            <br>
+            <input type="email" placeholder="Email" ng-model="user_email" required>
+            <br>
+            <input type="password" placeholder="Password" ng-model="user_password" required>
+            <br>
+            <input type="password" placeholder="Confirm Password" ng-model="user_password_confirmation" required>
+            <br><br>            
+            <button type="submit">Sign up</button>
+        </form>
+        <br>
+        <div class="error_message" ng-show="registrationStatus != 0">User already exists!</div>
+        <div class="error_message" ng-show="user_password != user_password_confirmation">Passwords don't match!</div>
+    </div>
+    <div class="col-md-4"></div>
+</div>

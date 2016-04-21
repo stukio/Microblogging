@@ -1,0 +1,10 @@
+<div class="modal">
+    <div class="modal-content">
+        <form ng-submit="commentOnPost(newComment)">
+            <input class="comment_input" type="text" placeholder="tell us what you think about this post" ng-model="newComment">
+            <br><br>
+            <button class="submit_button" type="submit" ng-disabled="newComment == null">Comment</button>
+        </form>
+        <button class="close_button" type="button" ng-click="closeModal()">Close</button>
+    </div>
+</div>

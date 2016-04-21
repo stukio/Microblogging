@@ -1,0 +1,16 @@
+<div class="modal">
+    <div class="modal-content">
+        <form ng-submit="createPost(postID, 'quote', '', newContent, newSource, '', newTags);">
+            <input class="title_input" type="text" placeholder="Quote" ng-model="newContent">
+            <br>
+            <input class="source_input" type="text" placeholder="- Source" ng-model="newSource">
+            <br><br>
+            <input class="tags" type="text" placeholder="#tags" ng-model="newTags">
+            <br>
+            <p class="tag_label">Separate with comas (e.g.: beyoncé, who run the world?)</p>
+            <br><br><br>
+            <button class="submit_button" type="submit" ng-disabled="newTitle == null && newContent == null && newTags == null">Publish</button>
+        </form>
+        <button class="close_button" type="button" ng-click="closeModal()">Close</button>
+    </div>
+</div>
